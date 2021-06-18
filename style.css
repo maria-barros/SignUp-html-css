@@ -15,6 +15,7 @@ body {
     font-weight: 500;
     display: flex;
     min-height: 100vh;
+    min-width: 100vw;
 }
 
 main {
@@ -24,12 +25,14 @@ main {
     align-items: center;
     justify-content: center;
     
+    
 }
 main h1 {
     color: #8880fe;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    margin-top: 2.5rem;
+    text-align: center;
+    /* margin-top: 2.5rem; */
 }
 
 main .social-media a {
@@ -123,14 +126,16 @@ main form input[type="submit"]:hover {
 }
 
 section.images {
+    width: 50vw;
     display: flex;
     align-items: flex-end;
+    justify-content: flex-end;
     padding: 4rem;
     
 }
 
 section.images img {
-    width: 90%;
+    width: 100%;
 }
 
 section.images .circle {
@@ -143,3 +148,43 @@ section.images .circle {
     clip-path: circle(40% at right 80%);
     z-index: -1;
 }
+
+
+
+/* responsive ============================== */
+
+@media only screen and (min-width:900px) and (max-width:1200px){
+    section.images {
+        width: 110%;
+    }
+
+    section.images .circle {
+        clip-path: (35% at right 80%);
+    }
+}
+
+@media only screen and (max-width:900px) {
+    section.images {
+        display: none;
+        visibility: hidden;
+    }
+    main {
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    main h1 {
+        font-size: 2rem;
+    }
+    main .alternative span {
+        font-size: 0.8rem;
+    }
+    main form label span, main form input [type="submit"] {
+        font-size:1rem;
+    }
+}
+
+
+
+
